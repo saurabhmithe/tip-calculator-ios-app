@@ -49,7 +49,7 @@
                                     <segment title="20%"/>
                                     <segment title="25%"/>
                                 </segments>
-                                <color key="tintColor" red="1" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <connections>
                                     <action selector="calculateTip:" destination="BYZ-38-t0r" eventType="valueChanged" id="vaI-OJ-dUo"/>
                                 </connections>
@@ -63,21 +63,21 @@
                                 <rect key="frame" x="52" y="148" width="57" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="1" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tip" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="miL-2G-BlX">
                                 <rect key="frame" x="52" y="225" width="58" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="1" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Total" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="PoD-WI-lNA">
                                 <rect key="frame" x="52" y="309" width="72" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="1" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
@@ -87,12 +87,21 @@
                             <outletCollection property="gestureRecognizers" destination="ixU-zt-bmb" appends="YES" id="NGh-DW-3Hy"/>
                         </connections>
                     </view>
-                    <navigationItem key="navigationItem" id="RQy-DP-7jj"/>
+                    <navigationItem key="navigationItem" id="RQy-DP-7jj">
+                        <barButtonItem key="rightBarButtonItem" title="Settings" id="WN7-fB-giC">
+                            <connections>
+                                <segue destination="q3b-BD-njn" kind="push" id="WlJ-Oh-zs4"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
+                        <outlet property="amountText" destination="miL-2G-BlX" id="4qD-4U-LrA"/>
                         <outlet property="billField" destination="192-KH-rV6" id="oda-OW-6iB"/>
+                        <outlet property="billFieldText" destination="zj6-AM-N1A" id="X5L-Uf-xLR"/>
                         <outlet property="tipControl" destination="1ff-po-GYD" id="VBz-Ly-E2D"/>
                         <outlet property="tipLabel" destination="qSX-w6-m2b" id="Ubi-n4-dtu"/>
                         <outlet property="totalLabel" destination="g3G-uZ-ald" id="hyL-S6-MDK"/>
+                        <outlet property="totalText" destination="PoD-WI-lNA" id="NhY-mR-5wJ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -121,6 +130,42 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2KO-Nx-bkY" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-48.799999999999997" y="148.52216748768473"/>
+        </scene>
+        <!--Settings View Controller-->
+        <scene sceneID="Xe0-En-HrJ">
+            <objects>
+                <viewController id="q3b-BD-njn" customClass="SettingsViewController" customModule="Tipster___The_Tip_Calculator" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="KND-vi-FEG">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" id="ftW-Bq-VFa">
+                                <rect key="frame" x="312" y="126" width="49" height="31"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <connections>
+                                    <action selector="darkModeSwitch:" destination="q3b-BD-njn" eventType="valueChanged" id="aCG-Zh-hfw"/>
+                                </connections>
+                            </switch>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Dark Mode" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="lgt-B4-DCI">
+                                <rect key="frame" x="42" y="131" width="93" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="ryV-zF-LEn"/>
+                    <connections>
+                        <outlet property="darkModeLabel" destination="lgt-B4-DCI" id="561-sQ-Rbh"/>
+                        <outlet property="switchButton" destination="ftW-Bq-VFa" id="PTc-7J-Ruu"/>
+                        <outletCollection property="switchButton" destination="ftW-Bq-VFa" collectionClass="NSMutableArray" id="rBH-UE-TXD"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="pIb-F2-ts0" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1725.5999999999999" y="148.52216748768473"/>
         </scene>
     </scenes>
 </document>

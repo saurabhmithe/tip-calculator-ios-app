@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		095470D221D60C3B007A3E1A /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 095470D121D60C3B007A3E1A /* SettingsViewController.swift */; };
+		095470D421D613B3007A3E1A /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 095470D321D613B3007A3E1A /* Settings.swift */; };
 		09FF514321C8E171009DF198 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09FF514221C8E171009DF198 /* AppDelegate.swift */; };
 		09FF514521C8E171009DF198 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09FF514421C8E171009DF198 /* ViewController.swift */; };
 		09FF514821C8E171009DF198 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 09FF514621C8E171009DF198 /* Main.storyboard */; };
@@ -34,6 +36,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		095470D121D60C3B007A3E1A /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		095470D321D613B3007A3E1A /* Settings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
 		09FF513F21C8E171009DF198 /* Tipster - The Tip Calculator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Tipster - The Tip Calculator.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		09FF514221C8E171009DF198 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		09FF514421C8E171009DF198 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -100,9 +104,11 @@
 				09FF514221C8E171009DF198 /* AppDelegate.swift */,
 				09FF514421C8E171009DF198 /* ViewController.swift */,
 				09FF514621C8E171009DF198 /* Main.storyboard */,
+				095470D121D60C3B007A3E1A /* SettingsViewController.swift */,
 				09FF514921C8E173009DF198 /* Assets.xcassets */,
 				09FF514B21C8E173009DF198 /* LaunchScreen.storyboard */,
 				09FF514E21C8E173009DF198 /* Info.plist */,
+				095470D321D613B3007A3E1A /* Settings.swift */,
 			);
 			path = "Tipster - The Tip Calculator";
 			sourceTree = "<group>";
@@ -258,6 +264,8 @@
 			files = (
 				09FF514521C8E171009DF198 /* ViewController.swift in Sources */,
 				09FF514321C8E171009DF198 /* AppDelegate.swift in Sources */,
+				095470D421D613B3007A3E1A /* Settings.swift in Sources */,
+				095470D221D60C3B007A3E1A /* SettingsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

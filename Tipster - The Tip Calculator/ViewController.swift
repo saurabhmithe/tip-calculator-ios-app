@@ -14,12 +14,35 @@ class ViewController: UIViewController {
     @IBOutlet weak var tipLabel: UILabel!
     @IBOutlet weak var totalLabel: UILabel!
     @IBOutlet weak var tipControl: UISegmentedControl!
+    @IBOutlet weak var billFieldText: UILabel!
+    @IBOutlet weak var amountText: UILabel!
+    @IBOutlet weak var totalText: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        self.view.backgroundColor = UIColor.black;
+        self.view.backgroundColor = Settings.sharedInstance.backgroundColor;
+        billField.textColor = Settings.sharedInstance.textColor;
+        totalLabel.textColor = Settings.sharedInstance.textColor;
+        billFieldText.textColor = Settings.sharedInstance.textColor;
+        amountText.textColor = Settings.sharedInstance.textColor;
+        totalText.textColor = Settings.sharedInstance.textColor;
+        tipControl.tintColor = Settings.sharedInstance.textColor;
+        tipLabel.textColor = Settings.sharedInstance.textColor;
+        totalLabel.textColor = Settings.sharedInstance.textColor;
         self.title = "Tip Calculator";
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        self.view.backgroundColor = Settings.sharedInstance.backgroundColor;
+        billField.textColor = Settings.sharedInstance.textColor;
+        totalLabel.textColor = Settings.sharedInstance.textColor;
+        billFieldText.textColor = Settings.sharedInstance.textColor;
+        amountText.textColor = Settings.sharedInstance.textColor;
+        totalText.textColor = Settings.sharedInstance.textColor;
+        tipControl.tintColor = Settings.sharedInstance.textColor;
+        tipLabel.textColor = Settings.sharedInstance.textColor;
+        totalLabel.textColor = Settings.sharedInstance.textColor;
     }
     @IBAction func calculateTip(_ sender: Any) {
         
@@ -28,12 +51,8 @@ class ViewController: UIViewController {
         let tip = bill * tipPercentages[tipControl.selectedSegmentIndex]
         let total = bill + tip
         
-        billField.backgroundColor = UIColor.darkGray;
-        billField.textColor = UIColor.yellow;
         tipLabel.text = String(format: "$%0.2f", tip)
-        tipLabel.textColor = UIColor.yellow;
         totalLabel.text = String(format: "$%0.2f", total)
-        totalLabel.textColor = UIColor.yellow;
     }
     
     @IBAction func onTap(_ sender: Any) {
