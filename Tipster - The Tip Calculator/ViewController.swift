@@ -21,28 +21,19 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        self.view.backgroundColor = Settings.sharedInstance.backgroundColor;
-        billField.textColor = Settings.sharedInstance.textColor;
-        totalLabel.textColor = Settings.sharedInstance.textColor;
-        billFieldText.textColor = Settings.sharedInstance.textColor;
-        amountText.textColor = Settings.sharedInstance.textColor;
-        totalText.textColor = Settings.sharedInstance.textColor;
-        tipControl.tintColor = Settings.sharedInstance.textColor;
-        tipLabel.textColor = Settings.sharedInstance.textColor;
-        totalLabel.textColor = Settings.sharedInstance.textColor;
+        if (UserDefaults.standard.bool(forKey: "switchKeyName")) {
+            Settings.sharedInstance.backgroundColor = UIColor.black;
+            Settings.sharedInstance.textColor = UIColor.white;
+        } else {
+            Settings.sharedInstance.backgroundColor = UIColor.white;
+            Settings.sharedInstance.textColor = UIColor.black;
+        }
+        switchColor();
         self.title = "Tip Calculator";
     }
     
     override func viewDidAppear(_ animated: Bool) {
-        self.view.backgroundColor = Settings.sharedInstance.backgroundColor;
-        billField.textColor = Settings.sharedInstance.textColor;
-        totalLabel.textColor = Settings.sharedInstance.textColor;
-        billFieldText.textColor = Settings.sharedInstance.textColor;
-        amountText.textColor = Settings.sharedInstance.textColor;
-        totalText.textColor = Settings.sharedInstance.textColor;
-        tipControl.tintColor = Settings.sharedInstance.textColor;
-        tipLabel.textColor = Settings.sharedInstance.textColor;
-        totalLabel.textColor = Settings.sharedInstance.textColor;
+        switchColor();
     }
     @IBAction func calculateTip(_ sender: Any) {
         
@@ -59,5 +50,16 @@ class ViewController: UIViewController {
         view.endEditing(true)
     }
     
+    func switchColor() {
+        self.view.backgroundColor = Settings.sharedInstance.backgroundColor;
+        billField.textColor = Settings.sharedInstance.textColor;
+        totalLabel.textColor = Settings.sharedInstance.textColor;
+        billFieldText.textColor = Settings.sharedInstance.textColor;
+        amountText.textColor = Settings.sharedInstance.textColor;
+        totalText.textColor = Settings.sharedInstance.textColor;
+        tipControl.tintColor = Settings.sharedInstance.textColor;
+        tipLabel.textColor = Settings.sharedInstance.textColor;
+        totalLabel.textColor = Settings.sharedInstance.textColor;
+    }
 }
 

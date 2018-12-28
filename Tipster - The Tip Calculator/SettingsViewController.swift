@@ -12,12 +12,27 @@ class SettingsViewController: UIViewController {
     
     @IBOutlet weak var darkModeLabel: UILabel!
     @IBOutlet weak var switchButton: UISwitch!
+    let switchKeyConstant = "switchKeyName";
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        if (UserDefaults.standard.bool(forKey: "switchKeyName")) {
+            Settings.sharedInstance.backgroundColor = UIColor.black;
+            Settings.sharedInstance.textColor = UIColor.white;
+        } else {
+            Settings.sharedInstance.backgroundColor = UIColor.white;
+            Settings.sharedInstance.textColor = UIColor.black;
+        }
         self.view.backgroundColor = Settings.sharedInstance.backgroundColor;
         darkModeLabel.textColor = Settings.sharedInstance.textColor;
         // Do any additional setup after loading the view.
+        
+        if (UserDefaults.standard.bool(forKey: switchKeyConstant)) {
+            switchButton.isOn = true
+        } else {
+            switchButton.isOn = false
+        }
+
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -27,6 +42,7 @@ class SettingsViewController: UIViewController {
 
     
     @IBAction func darkModeSwitch(_ sender: Any) {
+        UserDefaults.standard.set(switchButton.isOn, forKey: switchKeyConstant)
         if (switchButton.isOn) {
             Settings.sharedInstance.backgroundColor = UIColor.black;
             Settings.sharedInstance.textColor = UIColor.white;

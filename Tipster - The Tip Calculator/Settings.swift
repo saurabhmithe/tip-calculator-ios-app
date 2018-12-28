@@ -10,7 +10,7 @@ import Foundation
 import UIKit
 
 class Settings {
-    static let sharedInstance = Settings()
-    var backgroundColor = UIColor.black; // set to white by default.
-    var textColor = UIColor.white;
+    static let sharedInstance = Settings();
+    var backgroundColor = UIColor.white; // set to white by default.
+    var textColor = UIColor.black;
 }
