@@ -20,6 +20,7 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        billField.backgroundColor = UIColor.lightGray;
         // Do any additional setup after loading the view, typically from a nib.
         if (UserDefaults.standard.bool(forKey: "switchKeyName")) {
             Settings.sharedInstance.backgroundColor = UIColor.black;
@@ -34,6 +35,7 @@ class ViewController: UIViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         switchColor();
+        billField.becomeFirstResponder();
     }
     @IBAction func calculateTip(_ sender: Any) {
         
