@@ -27,6 +27,7 @@ The following **additional** features are implemented:
 - [ ] List anything else that you can get done to improve the app functionality!
 - [✔] Remember the previously selected tip percentage across app restart.
 - [✔] User can choose between light and dark mode.
+- [✔] Settings page for selecting options.
 - [ ] Add predefined categories (e.g. restaurants, food delivery, etc.) and set recommended tip percentage automatically.
 - [ ] Add a "help" section where recommended tip percentages/amounts for different services are listed for the user to see.
 - [ ] Add accent colors to complement the light and dark mode.
