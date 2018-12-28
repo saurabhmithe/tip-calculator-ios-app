@@ -30,22 +30,26 @@ class ViewController: UIViewController {
             Settings.sharedInstance.textColor = UIColor.black;
         }
         switchColor();
+        tipControl.selectedSegmentIndex = UserDefaults.standard.integer(forKey: "tipPercent");
         self.title = "Tip Calculator";
     }
     
     override func viewDidAppear(_ animated: Bool) {
         switchColor();
         billField.becomeFirstResponder();
+        tipControl.selectedSegmentIndex = UserDefaults.standard.integer(forKey: "tipPercent");
     }
     @IBAction func calculateTip(_ sender: Any) {
         
-        let tipPercentages = [0.18, 0.20, 0.25]
-        let bill = Double(billField.text!) ?? 0
-        let tip = bill * tipPercentages[tipControl.selectedSegmentIndex]
-        let total = bill + tip
+        let tipPercentages = [0.18, 0.20, 0.25];
+        let bill = Double(billField.text!) ?? 0;
+        let tip = bill * tipPercentages[tipControl.selectedSegmentIndex];
+        let total = bill + tip;
         
         tipLabel.text = String(format: "$%0.2f", tip)
         totalLabel.text = String(format: "$%0.2f", total)
+        
+        UserDefaults.standard.set(tipControl.selectedSegmentIndex, forKey: "tipPercent");
     }
     
     @IBAction func onTap(_ sender: Any) {

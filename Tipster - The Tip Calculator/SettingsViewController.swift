@@ -34,7 +34,7 @@ class SettingsViewController: UIViewController {
         }
 
     }
-    
+
     override func viewDidAppear(_ animated: Bool) {
         self.view.backgroundColor = Settings.sharedInstance.backgroundColor;
         darkModeLabel.textColor = Settings.sharedInstance.textColor;
